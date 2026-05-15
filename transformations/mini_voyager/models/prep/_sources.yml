@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: ecommerce
+    description: "Raw e-commerce data ingested by dlt from source JSON files."
+    database: mini_voyager
+    schema: raw_ecommerce
+    tables:
+      - name: customers
+        description: "One row per customer."
+        columns:
+          - name: customer_id
+            description: "Natural key from source system."
+          - name: email
+          - name: first_name
+          - name: last_name
+          - name: country
+            description: "ISO country code."
+          - name: signed_up_at
+            description: "Timestamp when customer registered."
+
+      - name: orders
+        description: "One row per order placed."
+        columns:
+          - name: order_id
+            description: "Natural key from source system."
+          - name: customer_id
+            description: "Foreign key to customers."
+          - name: ordered_at
+            description: "Timestamp when order was placed."
+          - name: status
+            description: "completed, pending, or cancelled."
+
+      - name: order_items
+        description: "Line items within orders (one order has many items)."
+        columns:
+          - name: order_item_id
+            description: "Natural key from source system."
+          - name: order_id
+            description: "Foreign key to orders."
+          - name: sku
+            description: "Product SKU."
+          - name: product_name
+          - name: unit_price
+          - name: quantity

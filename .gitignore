@@ -1,0 +1,27 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# dlt + DuckDB
+warehouse/*.duckdb
+warehouse/*.duckdb.wal
+warehouse/*.duckdb.tmp/
+.dlt/secrets.toml
+
+# Generated source data (regenerable from seed script)
+ingestion/source_data/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+
+# dbt
+transformations/logs/
+transformations/**/logs/
+transformations/**/target/
+transformations/**/dbt_packages/
