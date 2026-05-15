@@ -8,8 +8,8 @@ with source as (
 renamed as (
     select
         -- Surrogate keys
-        md5(cast(order_id as varchar))             as order_sk,
-        md5(cast(customer_id as varchar))          as customer_sk,
+        {{ dbt_utils.generate_surrogate_key(['order_id']) }}    as order_sk,
+        {{ dbt_utils.generate_surrogate_key(['customer_id']) }} as customer_sk,
 
         -- Natural keys (preserved for traceability)
         order_id                                    as order_id,

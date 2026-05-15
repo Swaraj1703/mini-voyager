@@ -8,7 +8,7 @@ with source as (
 renamed as (
     select
         -- Surrogate key (deterministic hash of the natural key)
-        md5(cast(customer_id as varchar))         as customer_sk,
+        {{ dbt_utils.generate_surrogate_key(['customer_id']) }} as customer_sk,
 
         -- Natural key (preserved for traceability)
         customer_id                                as customer_id,
