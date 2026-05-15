@@ -25,3 +25,9 @@ transformations/logs/
 transformations/**/logs/
 transformations/**/target/
 transformations/**/dbt_packages/
+
+
+# Dagster
+orchestration/.dagster_home/
+orchestration/tmp*/
+**/__pycache__/

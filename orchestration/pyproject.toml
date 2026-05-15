@@ -1,0 +1,9 @@
+[project]
+name = "mini_voyager_orchestration"
+version = "0.1.0"
+description = "Dagster orchestration for the mini-voyager data platform"
+requires-python = ">=3.10"
+
+[tool.dagster]
+module_name = "mini_voyager_orchestration.definitions"
+code_location_name = "mini_voyager"
