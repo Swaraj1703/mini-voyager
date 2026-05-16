@@ -31,3 +31,4 @@ transformations/**/dbt_packages/
 orchestration/.dagster_home/
 orchestration/tmp*/
 **/__pycache__/
+orchestration/.tmp_dagster_home_*/
